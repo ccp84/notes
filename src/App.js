@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Button, Menu, MenuItem, Divider } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu menuAlign="start">
+        <MenuItem onClick={() => alert("Download")}>Download</MenuItem>
+        <MenuItem onClick={() => alert("Create a Copy")}>
+          Create a Copy
+        </MenuItem>
+        <MenuItem onClick={() => alert("Mark as Draft")}>
+          Mark as Draft
+        </MenuItem>
+        <Divider />
+        <MenuItem isDisabled onClick={() => alert("Delete")}>
+          Delete
+        </MenuItem>
+        <MenuItem onClick={() => alert("Attend a workshop")}>
+          Attend a workshop
+        </MenuItem>
+      </Menu>
+      <Button variation="primary">Hello world</Button>{" "}
+    </>
   );
 }
 
